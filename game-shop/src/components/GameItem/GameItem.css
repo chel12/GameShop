@@ -29,7 +29,7 @@
 	font-size: 14px;
 }
 .game-item__buy {
-	position: relative;
+	position: absolute;
 	right: 0;
 	bottom: -12px;
 }
