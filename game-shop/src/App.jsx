@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Header from './components/Header/Header';
 import { store } from './redux/store';
+import GamePage from './pages/GamePage/GamePage';
 
 function App() {
 	return (
@@ -13,6 +14,9 @@ function App() {
 					<Routes>
 						<Route path="/" element={<HomePage />} />
 					</Routes>
+					<Routes>
+						<Route path="/app/:title" element={<GamePage />} />
+					</Routes>
 				</div>
 			</BrowserRouter>
 		</Provider>
@@ -20,3 +24,4 @@ function App() {
 }
 
 export default App;
+//! app/:title парамсы название перменной чтобы добравться до неё через useParams
