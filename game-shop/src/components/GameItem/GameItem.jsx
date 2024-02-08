@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import GameBuy from '../GameBuy/GameBuy';
 import GameCover from '../GameCover/GameCover';
@@ -8,13 +8,13 @@ import './GameItem.css';
 import { setCurrentGame } from '../../redux/games/reducer';
 
 const GameItem = ({ game }) => {
-	const history = useHistory(); //запоминает историю и ссылку
+	const navigate = useNavigate(); //запоминает историю и ссылку
 	const dispatch = useDispatch();
 
 	const handleClick = () => {
 		//при клике в редаксе лежала игра на которую кликнули
 		dispatch(setCurrentGame(game));
-		history.push(`/app/${game.title}`); //ссылка ткая будет для игры
+		navigate(`/app/${game.title}`); //ссылка ткая будет для игры
 	};
 
 	return (
